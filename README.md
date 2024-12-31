@@ -1,54 +1,22 @@
-# [M4TT72 | Terminal](https://term.m4tt72.com)
+# Personal Website
 
-A terminal style website
+The source code of my personal website. The website uses an opensource [terminal theme](https://term.m4tt72.com) to add a bit of fun to a boring website.
 
-![screenshot](/docs/screenshot.png)
+## Development
 
-## IMPORTANT
+### Using npm
 
-This is a new version of [m4tt72/terminal](https://github.com/m4tt72/terminal), which is built with [Svelte](https://svelte.dev/).
-
-If you are looking for the old version, please check out the [v2 branch](https://github.com/m4tt72/terminal/tree/v2).
-
-The old version is built with [React](https://reactjs.org/), and it is no longer maintained.
-
-Thanks!
-
-## Quick Start
-
-### Using docker (recommended)
-
-```bash
-docker run -d --name terminal -p 3000:3000 ghcr.io/m4tt72/terminal
-```
-
-### Using npm/yarn
+0. Update content by editing the [commands.ts](src/utils/commands.ts) file.
 
 1. Install dependencies:
 
 ```bash
-yarn install
+npm install
 ```
 
-3. Run the server:
+2. Run the server:
 
 ```bash
-yarn dev
+npm run build
+npm run preview
 ```
-
-## Themes
-
-![themes](/docs/screenshot.gif)
-
-[Here's](/docs/themes) a list of available themes.
-
-
-## Contributing
-
-Please feel free to pull requests or log issues.
-
-Thanks!
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=m4tt72/terminal&type=Date)](https://star-history.com/#m4tt72/terminal&Date)

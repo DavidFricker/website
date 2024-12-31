@@ -10,10 +10,15 @@ export const commands: Record<string, (args: string[]) => Promise<string> | stri
   hostname: () => hostname,
   whoami: () => 'guest',
   date: () => new Date().toLocaleString(),
-  vi: () => `why use vi? try 'emacs'`,
-  vim: () => `why use vim? try 'emacs'`,
-  emacs: () => `why use emacs? try 'vim'`,
   echo: (args: string[]) => args.join(' '),
+  tools: () => {
+    window.open('https://tooli.tools');
+
+    return `Opened Tooli.Tools in a new window.`;
+  },
+  credits: () => {
+    return `This theme was developed by Yassine Fathi - https://github.com/m4tt72/terminal.\nI (David) have adapted the theme to suit my needs, please use the 'repo' command to see the source!`;
+  },
   sudo: (args: string[]) => {
     window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
 
@@ -74,14 +79,9 @@ export const commands: Record<string, (args: string[]) => Promise<string> | stri
     return '';
   },
   email: () => {
-    window.open(`mailto:${packageJson.author.email}`);
+    window.open('https://www.linkedin.com/in/david-fricker/');
 
-    return `Opening mailto:${packageJson.author.email}...`;
-  },
-  donate: () => {
-    window.open(packageJson.funding.url, '_blank');
-
-    return 'Opening donation url...';
+    return `Opening Linkedin profile in new tab.\nDue to email scrapers and general spam please send me a message via Linkedin...`;
   },
   weather: async (args: string[]) => {
     const city = args.join('+');
@@ -114,12 +114,12 @@ export const commands: Record<string, (args: string[]) => Promise<string> | stri
     }
   },
   banner: () => `
-███╗   ███╗██╗  ██╗████████╗████████╗███████╗██████╗
-████╗ ████║██║  ██║╚══██╔══╝╚══██╔══╝╚════██║╚════██╗
-██╔████╔██║███████║   ██║      ██║       ██╔╝ █████╔╝
-██║╚██╔╝██║╚════██║   ██║      ██║      ██╔╝ ██╔═══╝
-██║ ╚═╝ ██║     ██║   ██║      ██║      ██║  ███████╗
-╚═╝     ╚═╝     ╚═╝   ╚═╝      ╚═╝      ╚═╝  ╚══════╝ v${packageJson.version}
+██████╗  █████╗ ██╗   ██╗██╗██████╗     ███████╗██████╗ ██╗ ██████╗██╗  ██╗███████╗██████╗ 
+██╔══██╗██╔══██╗██║   ██║██║██╔══██╗    ██╔════╝██╔══██╗██║██╔════╝██║ ██╔╝██╔════╝██╔══██╗
+██║  ██║███████║██║   ██║██║██║  ██║    █████╗  ██████╔╝██║██║     █████╔╝ █████╗  ██████╔╝
+██║  ██║██╔══██║╚██╗ ██╔╝██║██║  ██║    ██╔══╝  ██╔══██╗██║██║     ██╔═██╗ ██╔══╝  ██╔══██╗
+██████╔╝██║  ██║ ╚████╔╝ ██║██████╔╝    ██║     ██║  ██║██║╚██████╗██║  ██╗███████╗██║  ██║
+╚═════╝ ╚═╝  ╚═╝  ╚═══╝  ╚═╝╚═════╝     ╚═╝     ╚═╝  ╚═╝╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝v${packageJson.version}
 
 Type 'help' to see list of available commands.
 `,
